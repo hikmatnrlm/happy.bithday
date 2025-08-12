@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Intro Screen -->
+<div id="intro-screen" class="intro-screen">
+  <canvas id="confetti-intro"></canvas>
+  <img src="image/foto1.png" alt="Foto Kepala" class="head-bounce" />
+  <h1 class="fade-in glow"> Haii.. Selamat Datang Sayang</h1>
+  <button id="openBtn">Open</button>
+</div>
+
+<!-- Main content -->
+<div id="main-content" style="display:none;">
+  <canvas id="confetti-main"></canvas>
+  <div class="stars"></div>
+
+  <!-- Bingkai mulai -->
+  <div class="birthday-frame">
+
+    <div class="container">
+      <img src="kue/kue 2.png" class="cake cake-left" alt="Cake" />
+      <img src="kue/kue 2.png" class="cake cake-right" alt="Cake" />
+
+      <h1 class="fade-in glow">Happy Birthday !!</h1>
+      <h2 class="fade-in glow">Nayya Keysa Putri</h2><br>
+
+      <p class="fade-in delay-1 teks-utama">Happy 20th Birthday, Love..❤️</p>
+      <p class="fade-in delay-2 teks-utama">
+        Di usia yang baru ini, aku harap kamu selalu dikelilingi oleh ketenangan, cinta, dan hal-hal yang membuatmu bertumbuh jadi pribadi yang lebih kuat dan bahagia.
+      </p>
+      <p class="fade-in delay-3 teks-utama">
+        I may not be able to give you everything,<br>
+        but I’ll always give you my support, my time, and my heart.
+      </p>
+      <p class="fade-in delay-4 teks-utama">
+        Terima kasih karena sudah menjadi sosok yang selalu sabar dan tulus.<br>
+        I’m proud of the woman you’re becoming.
+      </p>
+      <p class="fade-in delay-5 teks-utama">
+        May this year be gentle with you and may I always be beside you through it all.
+      </p><br>
+      <p class="fade-in delay-6 teks-utama">I LOVE YOU ❤️</p>
+
+      <div class="gallery fade-in delay-6">
+        <img src="foto/gambar 1.jpg" alt="photo 1" onclick="openImage(this)" />
+        <img src="foto/gambar 2.jpg" alt="photo 2" onclick="openImage(this)" />
+        <img src="foto/gambar 3.jpg" alt="photo 3" onclick="openImage(this)" />
+        <img src="foto/gambar 4.jpg" alt="photo 4" onclick="openImage(this)" />
+        <img src="foto/gambar 5.jpg" alt="photo 5" onclick="openImage(this)" />
+        <img src="foto/gambar 6.jpg" alt="photo 6" onclick="openImage(this)" />
+        <img src="foto/gambar 7.jpg" alt="photo 7" onclick="openImage(this)" />
+        <img src="foto/gambar 8.jpg" alt="photo 8" onclick="openImage(this)" />
+        <img src="foto/gambar 9.jpg" alt="photo 9" onclick="openImage(this)" />
+        <img src="foto/gambar 10.jpg" alt="photo 10" onclick="openImage(this)" />
+        <img src="foto/gambar 11.jpg" alt="photo 11" onclick="openImage(this)" />
+        <img src="foto/gambar 12.jpg" alt="photo 12" onclick="openImage(this)" />
+        <img src="foto/gambar 13.jpg" alt="photo 13" onclick="openImage(this)" />
+        <img src="foto/gambar 14.jpg" alt="photo 14" onclick="openImage(this)" />
+    </div>
+
+    <!-- Tombol untuk membuka video -->
+<div class="memories-button fade-in delay-7">
+  <button id="openVideoBtn">Open Memories Video 🎥</button>
+</div>
+
+<!-- Video Memories (awal disembunyikan) -->
+<div id="memories-video" class="fade-in delay-8" style="display:none; margin-top:30px;">
+  <video width="80%" controls>
+    <source src="video/memories.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video tag.
+  </video>
+</div>
+
+    <footer class="footer">
+      <p><strong>©2025 Dibuat Oleh Hikmat Ganteng Pisan</strong></p>
+    </footer>
+
+  </div>
+  <!-- Bingkai selesai -->
+
+  <div class="modal" id="modal" onclick="closeImage()">
+    <img id="modal-img" src="" alt="Enlarged Photo" />
+  </div>
+</div>
+
+<!-- Background music -->
+<audio id="bgMusic" src="lagu.mp3/happy birthday.mp3" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

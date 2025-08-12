@@ -1,0 +1,264 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(1000deg, pink, white);
+  overflow-x: hidden;
+  position: relative;
+  color: #b30059;
+  text-align: center;
+}
+
+/* Background bintang */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  z-index: 0;
+  animation: moveStars 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+/* Kontainer utama */
+.container {
+  padding: 50px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2 { margin: 0; }
+
+p {
+  margin: 15px auto;
+  max-width: 700px;
+}
+
+.teks-utama {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Galeri foto */
+.gallery {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover { transform: scale(1.05); }
+
+/* Modal foto */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+
+/* Animasi Fade-in */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1s; }
+.delay-3 { animation-delay: 1.5s; }
+.delay-4 { animation-delay: 2s; }
+.delay-5 { animation-delay: 2.5s; }
+.delay-6 { animation-delay: 3s; }
+.delay-7 { animation-delay: 3.5s; }
+.delay-8 { animation-delay: 4s; }
+.delay-9 { animation-delay: 4.5s; }
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.glow {
+  text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66cc;
+}
+
+/* Intro screen */
+.intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, pink, white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  color: #b30059;
+}
+
+.intro-screen h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.intro-screen button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #ff66cc;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.intro-screen button:hover { background-color: #e60073; }
+
+/* Foto kepala */
+.head-bounce {
+  width: 300px;
+  height: auto;
+  margin-bottom: 0px;
+  animation: headMove 2s ease-in-out infinite, glowPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.8))
+          drop-shadow(0 0 25px rgba(255, 192, 203, 0.6));
+}
+
+@keyframes headMove {
+  0%, 50%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.7))
+            drop-shadow(0 0 20px rgba(255, 192, 203, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(255, 105, 180, 1))
+            drop-shadow(0 0 35px rgba(255, 192, 203, 0.9));
+  }
+}
+
+/* Kue ulang tahun kiri kanan */
+.cake {
+  width: 150px;
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+  animation: floatCake 3s ease-in-out infinite;
+}
+
+.cake-left {
+  left: 10%;
+  animation: slideInLeft 1.5s ease-out forwards, floatCake 3s ease-in-out infinite;
+}
+
+.cake-right {
+  right: 10%;
+  animation: slideInRight 1.5s ease-out forwards, floatCake 3s ease-in-out infinite;
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-200px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(200px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes floatCake {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  padding: 20px 0;
+  font-size: 1em;
+  color: #b30059;
+  opacity: 0.7;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Canvas Confetti */
+#confetti-intro, #confetti-main {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tombol Memories */
+.memories-button {
+  margin-top: 40px;
+}
+
+.memories-button button {
+  padding: 15px 25px;
+  font-size: 1.1em;
+  background-color: #ff66cc;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.memories-button button:hover {
+  background-color: #e60073;
+  transform: scale(1.05);
+}
+
+.memories-link {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 1.1em;
+  background-color: #ff66cc;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.memories-link:hover {
+  background-color: #e60073;
+  transform: scale(1.05);
+}
